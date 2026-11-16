@@ -5,44 +5,72 @@ import { ArrowUpRight, Copy, Download, X } from 'lucide-react';
 
 export function ProfileCard() {
 	return (
-		<aside
-			className="relative flex h-[calc(100svh-60px)] w-full flex-col overflow-hidden rounded-[30px] border border-[#292929] bg-gradient-to-br from-[rgba(20,20,20,.88)] to-[rgba(15,15,15,.79)] shadow-[inset_0_0_0_7px_rgba(255,255,255,.035),0_10px_35px_rgba(0,0,0,.28)] max-[760px]:h-[min(760px,88svh)] max-[760px]:min-h-[610px] max-[760px]:rounded-3xl"
-			aria-label="Developer profile"
-		>
-			{/* image layer — stays absolute so it fills the card behind the content */}
-			<div className="absolute inset-0" role="img" aria-label="Portrait of Developer">
+		<aside className="relative flex max-h-[calc(100vh-48px)] rounded-[24px] bg-linear-to-b from-white/8 to-white/4 p-1.5 shadow-[0_0.5px_0.5px_0_rgba(0,0,0,0.0588),0_1px_1px_-0.5px_rgba(0,0,0,0.0588),0_3px_3px_-1.5px_rgba(0,0,0,0.0588),0_5px_5px_-2.5px_rgba(0,0,0,0.1216),inset_0_0.5px_0.5px_0_rgba(255,255,255,0.0784),inset_0_1px_3px_0_rgba(255,255,255,0.0314),inset_0_-4px_12px_0_rgba(255,255,255,0.0392)] backdrop-blur-md">
+			<div className="relative z-0 w-full flex-1 overflow-hidden rounded-[18px] bg-[#0f0f0f]">
+				<div className="relative z-1 h-full w-full overflow-hidden rounded-[18px]">
+					<Image
+						src="/assets/images/avatar.webp"
+						alt="Portrait of Developer"
+						fill
+						priority
+						sizes="(max-width: 760px) 100vw, 32vw"
+						className="scale-100 object-cover grayscale transition-transform duration-300 aspect-[0.546728972]"
+					/>
+				</div>
+				<div className="flex min-[576px]:block! top-[50%] left-0 absolute items-center z-2 -translate-y-1/2">
+					<div>
+						<Image
+							src="/assets/images/vector_dark.svg"
+							alt=""
+							width={32}
+							height={227}
+							className="grayscale"
+						/>
+					</div>
+
+					<p className="absolute inset-0 left-0 z-3 inline-flex items-center justify-center flex-col gap-2 text-[rgba(255,255,255,0.72)]">
+						<span
+							className="text-sm font-medium tracking-normal"
+							style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
+						>
+							Available for work
+						</span>
+						<span className="relative size-2 rounded-full bg-[#00de51] after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-(--green) after:animate-[rippleFade_1.8s_ease-out_infinite]" />{' '}
+					</p>
+				</div>
+			</div>
+
+			<div className="absolute top-[38px] left-[38px]">
 				<Image
-					src="/avatar.png"
+					src="/assets/images/logo2.svg"
 					alt=""
 					fill
 					priority
 					sizes="(max-width: 760px) 100vw, 32vw"
-					className="object-cover object-top"
+					className="object-contain grayscale"
 				/>
-				{/* gradient fade so the copy at the bottom stays readable */}
-				<div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(13,13,13,.82),transparent_60%),radial-gradient(ellipse_at_48%_47%,transparent_10%,rgba(0,0,0,.26)_75%)]" />
 			</div>
 
-			{/* topline — first flow child */}
-			<div className="relative z-[2] flex items-start justify-between px-[46px] pt-12 max-[760px]:px-7 max-[760px]:pt-[30px]">
+			{/* topline */}
+			{/* <div className="relative z-[2] flex shrink-0 items-start justify-between px-11.5 pt-12 max-[760px]:px-7 max-[760px]:pt-7.5">
 				<div
-					className="brand-mark relative h-[49px] w-[49px] rounded-full"
+					className="brand-mark relative h-12.25 w-12.25 rounded-full"
 					aria-label="Personal portfolio mark"
 				>
-					<span className="absolute bottom-[5px] left-[2px] h-2 w-[23px] rotate-45" />
+					<span className="absolute bottom-1.25 left-0.5 h-2 w-5.75 rotate-45" />
 				</div>
 				<div className="grid gap-2.5 max-[760px]:gap-2">
 					<a
 						href="#contact"
 						aria-label="X profile"
-						className="grid h-[50px] w-[50px] cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
+						className="grid h-12.5 w-12.5 cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
 					>
 						<X size={22} />
 					</a>
 					<a
 						href="#contact"
 						aria-label="LinkedIn profile"
-						className="grid h-[50px] w-[50px] cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
+						className="grid h-12.5 w-12.5 cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
 					>
 						<span className="rounded-[3px] border-2 border-current px-0.5 text-[21px] font-bold leading-none tracking-[-1px]">
 							in
@@ -57,10 +85,10 @@ export function ProfileCard() {
 						<Copy size={18} />
 					</button>
 				</div>
-			</div>
+			</div> */}
 
-			{/* copy — last flow child, pinned to the bottom by mt-auto */}
-			<div className="relative z-[2] mt-auto px-[47px] pb-[43px] max-[1200px]:px-8 max-[760px]:px-[26px] max-[760px]:pb-[25px]">
+			{/* copy — pinned to bottom */}
+			{/* <div className="relative z-[2] mt-auto shrink-0 px-[47px] pb-[43px] max-[1200px]:px-8 max-[760px]:px-[26px] max-[760px]:pb-[25px]">
 				<p className="mb-12 flex items-center gap-2.5 text-base text-[#c7d1d9] max-[760px]:mb-7 max-[760px]:text-sm">
 					<span className="h-[11px] w-[11px] rounded-full bg-[var(--green)]" />
 					Available for Work
@@ -98,51 +126,56 @@ export function ProfileCard() {
 						Download CV
 					</a>
 				</div>
-			</div>
+			</div> */}
 		</aside>
 	);
 }
 // 'use client';
 
+// import Image from 'next/image';
 // import { ArrowUpRight, Copy, Download, X } from 'lucide-react';
 
 // export function ProfileCard() {
 // 	return (
 // 		<aside
-// 			className="absolute left-5 top-[30px] bottom-[30px] w-[min(600px,32vw)] overflow-hidden rounded-[30px] border border-[#292929] bg-gradient-to-br from-[rgba(20,20,20,.88)] to-[rgba(15,15,15,.79)] shadow-[inset_0_0_0_7px_rgba(255,255,255,.035),0_10px_35px_rgba(0,0,0,.28)] max-[1200px]:w-[34vw] max-[760px]:relative max-[760px]:inset-auto max-[760px]:mx-auto max-[760px]:h-[min(760px,88svh)] max-[760px]:min-h-[610px] max-[760px]:w-full max-[760px]:rounded-3xl"
+// 			className="relative flex h-[calc(100svh-60px)] w-full flex-col overflow-hidden rounded-[30px] border border-[#292929] bg-linear-to-br from-[rgba(20,20,20,.88)] to-[rgba(15,15,15,.79)] shadow-[inset_0_0_0_7px_rgba(255,255,255,.035),0_10px_35px_rgba(0,0,0,.28)] max-[760px]:h-[min(760px,88svh)] max-[760px]:min-h-152.5 max-[760px]:rounded-3xl"
 // 			aria-label="Developer profile"
 // 		>
-// 			<div
-// 				className="portrait-placeholder absolute inset-0 flex items-center justify-center overflow-hidden"
-// 				role="img"
-// 				aria-label="Replace with profile portrait"
-// 			>
-// 				<span className="image-label absolute left-3 top-3 z-[2] rounded border border-[rgba(255,255,255,.16)] bg-[rgba(0,0,0,.48)] px-[7px] py-[5px] text-[8px] tracking-[.14em] text-[rgba(235,235,235,.64)]">
-// 					PROFILE IMAGE
-// 				</span>
-// 				<div className="portrait-silhouette absolute -bottom-[7%] left-[9%] h-[81%] w-[82%] rounded-[48%_48%_10%_10%]">
-// 					<span className="absolute left-[33%] top-[27%] z-[1] h-[10%] w-[40%] -rotate-8 rounded-full opacity-80" />
+// 			<div className="bg-[#f0f0f0]">
+// 				<div className="absolute inset-0" role="img" aria-label="Portrait of Developer">
+// 					<Image
+// 						src="/assets/images/avatar.webp"
+// 						alt=""
+// 						fill
+// 						priority
+// 						sizes="(max-width: 760px) 100vw, 32vw"
+// 						className="object-cover object-top"
+// 					/>
+// 					<div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(13,13,13,.82),transparent_60%),radial-gradient(ellipse_at_48%_47%,transparent_10%,rgba(0,0,0,.26)_75%)]" />
 // 				</div>
 // 			</div>
-// 			<div className="absolute inset-x-[46px] top-12 z-[2] flex items-start justify-between max-[760px]:inset-x-7 max-[760px]:top-[30px]">
+// 			{/* image layer — stays absolute so it fills the card behind the content */}
+
+// 			{/* topline — first flow child */}
+// 			<div className="relative z-2 flex items-start justify-between px-11.5 pt-12 max-[760px]:px-7 max-[760px]:pt-7.5">
 // 				<div
-// 					className="brand-mark relative h-[49px] w-[49px] rounded-full"
+// 					className="brand-mark relative h-12.25 w-12.25 rounded-full"
 // 					aria-label="Personal portfolio mark"
 // 				>
-// 					<span className="absolute bottom-[5px] left-[2px] h-2 w-[23px] rotate-45" />
+// 					<span className="absolute bottom-1.25 left-0.5 h-2 w-5.75 rotate-45" />
 // 				</div>
 // 				<div className="grid gap-2.5 max-[760px]:gap-2">
 // 					<a
 // 						href="#contact"
 // 						aria-label="X profile"
-// 						className="grid h-[50px] w-[50px] cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
+// 						className="grid h-12.5 w-12.5 cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
 // 					>
 // 						<X size={22} />
 // 					</a>
 // 					<a
 // 						href="#contact"
 // 						aria-label="LinkedIn profile"
-// 						className="grid h-[50px] w-[50px] cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
+// 						className="grid h-12.5 w-12.5 cursor-pointer place-items-center rounded-full border-0 bg-[rgba(42,42,42,.76)] text-[#ddd] transition-[background,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#333] max-[760px]:h-[42px] max-[760px]:w-[42px]"
 // 					>
 // 						<span className="rounded-[3px] border-2 border-current px-0.5 text-[21px] font-bold leading-none tracking-[-1px]">
 // 							in
@@ -158,7 +191,9 @@ export function ProfileCard() {
 // 					</button>
 // 				</div>
 // 			</div>
-// 			<div className="absolute inset-x-[45px] bottom-[43px] z-[2] left-[47px] max-[1200px]:left-8 max-[1200px]:right-[25px] max-[760px]:inset-x-[22px] max-[760px]:bottom-[25px] max-[760px]:left-[26px]">
+
+// 			{/* copy — last flow child, pinned to the bottom by mt-auto */}
+// 			<div className="relative z-[2] mt-auto px-[47px] pb-[43px] max-[1200px]:px-8 max-[760px]:px-[26px] max-[760px]:pb-[25px]">
 // 				<p className="mb-12 flex items-center gap-2.5 text-base text-[#c7d1d9] max-[760px]:mb-7 max-[760px]:text-sm">
 // 					<span className="h-[11px] w-[11px] rounded-full bg-[var(--green)]" />
 // 					Available for Work
