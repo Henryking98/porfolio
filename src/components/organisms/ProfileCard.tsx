@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import { Separator } from '../ui/separator';
-import { ArrowUpRight, Copy, Download, X } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 
 const socialLinks = [
   {
@@ -64,8 +64,6 @@ export function ProfileCard() {
 						alt=""
 						width={40}
 						height={40}
-						// sizes="(max-width: 760px) 100vw, 32vw"
-						// className="object-contain grayscale"
 					/>
 				</div>
 
