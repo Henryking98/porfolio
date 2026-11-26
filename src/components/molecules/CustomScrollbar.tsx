@@ -84,14 +84,17 @@ export default function CustomScrollbar() {
 		dragStartScrollTop.current = window.scrollY;
 	};
 
-	return (
-		<span
-			onMouseDown={handleMouseDown}
-			className={`fixed right-0.5 z-50 h-[9%] bg-[#00d95b] transition-[width,background-color] duration-200 ${
-				isDragging ? 'w-1.25 cursor-grabbing bg-[#00b84d]' : 'w-1 cursor-grab hover:w-1.25'
-			}`}
-			style={{ top: `${topPosition}%` }}
-			aria-hidden="true"
-		/>
-	);
+		return (
+			<span
+				onMouseDown={handleMouseDown}
+				className={`fixed right-0.5 z-50 h-[9%] w-1 transition-colors duration-200 ${
+					isDragging
+						? 'cursor-grabbing bg-[#009e42]'
+						: 'cursor-grab bg-[#00d95b] hover:bg-[#00b84d]'
+				}`}
+				style={{ top: `${topPosition}%` }}
+				aria-hidden="true"
+			/>
+		);
+
 }

@@ -6,36 +6,38 @@ import { Separator } from '../ui/separator';
 import { ArrowUpRight, Download } from 'lucide-react';
 
 const socialLinks = [
-  {
-    name: "Instagram",
-    url: "https://instagram.com",
-    icon: FaInstagram,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com",
-    icon: FaLinkedinIn,
-  },
-  {
-    name: "X",
-    url: "https://x.com",
-    icon: FaXTwitter,
-  },
+	{
+		name: 'Instagram',
+		url: 'https://instagram.com',
+		icon: FaInstagram,
+	},
+	{
+		name: 'LinkedIn',
+		url: 'https://linkedin.com',
+		icon: FaLinkedinIn,
+	},
+	{
+		name: 'X',
+		url: 'https://x.com',
+		icon: FaXTwitter,
+	},
 ];
+
 export function ProfileCard() {
 	return (
-		<aside className="relative flex max-h-[calc(100vh-48px)] rounded-[24px] bg-linear-to-b from-white/8 to-white/4 p-1.5 shadow-[0_0.5px_0.5px_0_rgba(0,0,0,0.0588),0_1px_1px_-0.5px_rgba(0,0,0,0.0588),0_3px_3px_-1.5px_rgba(0,0,0,0.0588),0_5px_5px_-2.5px_rgba(0,0,0,0.1216),inset_0_0.5px_0.5px_0_rgba(255,255,255,0.0784),inset_0_1px_3px_0_rgba(255,255,255,0.0314),inset_0_-4px_12px_0_rgba(255,255,255,0.0392)] backdrop-blur-md">
-			<div className="relative z-0 w-full flex-1 overflow-hidden rounded-[18px] bg-[#0f0f0f]">
+		<aside className="relative flex h-full flex-col rounded-[24px] bg-linear-to-b from-white/8 to-white/4 p-1.5 shadow-[0_0.5px_0.5px_0_rgba(0,0,0,0.0588),0_1px_1px_-0.5px_rgba(0,0,0,0.0588),0_3px_3px_-1.5px_rgba(0,0,0,0.0588),0_5px_5px_-2.5px_rgba(0,0,0,0.1216),inset_0_0.5px_0.5px_0_rgba(255,255,255,0.0784),inset_0_1px_3px_0_rgba(255,255,255,0.0314),inset_0_-4px_12px_0_rgba(255,255,255,0.0392)] backdrop-blur-md">
+			<div className="relative z-0 w-full flex-1 min-h-0 overflow-hidden rounded-[18px] bg-[#0f0f0f]">
 				<div className="relative h-full w-full overflow-hidden rounded-[18px]">
 					<Image
 						src="/assets/images/avatar.webp"
 						alt="Portrait of Developer"
 						fill
 						priority
-						sizes="(max-width: 760px) 100vw, 32vw"
+						sizes="(max-width: 760px) 100vw, 36vw"
 						className="scale-100 object-cover grayscale transition-transform duration-300 aspect-[0.546728972]"
 					/>
 				</div>
+
 				<div className="flex min-[576px]:block! top-[50%] left-0 absolute items-center z-2 -translate-y-1/2">
 					<div>
 						<Image
@@ -47,24 +49,19 @@ export function ProfileCard() {
 						/>
 					</div>
 
-					<p className="absolute inset-0 left-0 z-3 inline-flex items-center justify-center flex-col gap-2 text-[rgba(255,255,255,0.72)]">
+					<p className="pointer-events-none absolute inset-0 z-3 inline-flex flex-col items-center justify-center gap-2 text-[rgba(255,255,255,0.72)]">
 						<span
 							className="text-sm font-medium tracking-normal"
 							style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
 						>
 							Available for work
 						</span>
-						<span className="relative size-2 rounded-full bg-[#00de51] after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-(--green) after:animate-[rippleFade_1.8s_ease-out_infinite]" />{' '}
+						<span className="relative size-2 rounded-full bg-[#00de51] after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-[#00de51] after:animate-[rippleFade_1.8s_ease-out_infinite]" />
 					</p>
 				</div>
 
 				<div className="absolute top-9.5 left-9.5">
-					<Image
-						src="/assets/images/logo2.png"
-						alt=""
-						width={40}
-						height={40}
-					/>
+					<Image src="/assets/images/logo2.png" alt="" width={40} height={40} />
 				</div>
 
 				<ul className="absolute top-9.5 right-9.5 grid items-center gap-2">
@@ -87,10 +84,10 @@ export function ProfileCard() {
 				</ul>
 
 				<div className="absolute bottom-9.5 left-9.5 right-9.5">
-					<h4 className="text-[FFFFFFB8] pb-4 tracking-[-0.02em] font-medium text-md font-apfel text-[32px] leading-normal">
-						Hey I&apos;am a Developer
+					<h4 className="text-[#FFFFFFB8] pb-4 tracking-[-0.02em] font-medium font-apfel text-[32px] leading-normal">
+						Hey I&apos;m a Developer
 					</h4>
-					<p className="text-[#FFFFFF8F] text-sm tracking-[0.005em] ">
+					<p className="text-[#FFFFFF8F] text-sm tracking-[0.005em]">
 						I help startups grow with smart design and no-code development, based in
 						Cupertino, CA.
 					</p>
@@ -104,7 +101,7 @@ export function ProfileCard() {
 							Let&apos;s talk
 						</span>
 						<a
-							className="ml-3.5 flex items-center gap-3 text-sm text-[#b8c5cf] "
+							className="ml-3.5 flex items-center gap-3 text-sm text-[#b8c5cf]"
 							href="#contact"
 						>
 							<Download size={17} />
