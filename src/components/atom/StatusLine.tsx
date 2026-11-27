@@ -1,0 +1,32 @@
+interface StatusLineProps {
+	height?: number;
+	width?: number;
+	className?: string;
+}
+
+export function StatusLine({ height = 250, width = 32, className }: StatusLineProps) {
+	return (
+		<svg
+			width={width}
+			height={height}
+			viewBox={`0 0 ${width} 227`}
+			preserveAspectRatio="none"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			className={className}
+			aria-hidden="true"
+		>
+			<g clipPath="url(#status-line-clip)">
+				<path
+					d="M164.3 -80.7191C166.735 -81.8913 166.944 -82.3165 164.25 -82.1037C136.491 -79.911 -26.9477 -69.048 -74.5173 -60.2943C-82.6348 -58.8006 -93.1136 -54.5914 -101.119 -52.5826L-675.627 91.576C-694.714 96.3654 -693.373 123.923 -673.911 126.836L0 227.719C9.94112 227.719 -2.06162e-06 237.66 0 227.719C-9.94112 227.719 0 227.719 0 523V227.719C3.23376e-05 186.356 32 212.591 32 169.521V55.6924C32 14.7885 2.56364e-05 40.1786 0 -1.63867C-9.94112 -1.63867 2.06176e-06 -11.5798 0 -1.63867L164.3 -80.7191Z"
+					fill="#2C2C2C"
+				/>
+			</g>
+			<defs>
+				<clipPath id="status-line-clip">
+					<rect width={width} height={227} fill="white" />
+				</clipPath>
+			</defs>
+		</svg>
+	);
+}

@@ -1,25 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import { FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
 import { Separator } from '../ui/separator';
-import { ArrowUpRight, Download } from 'lucide-react';
+import { ArrowUpRight, FileText } from 'lucide-react';
+import { StatusLine } from '../atom/StatusLine';
 
 const socialLinks = [
 	{
-		name: 'Instagram',
-		url: 'https://instagram.com',
-		icon: FaInstagram,
-	},
-	{
 		name: 'LinkedIn',
-		url: 'https://linkedin.com',
+		url: 'https://linkedin.com/in/your-handle',
 		icon: FaLinkedinIn,
 	},
 	{
-		name: 'X',
-		url: 'https://x.com',
-		icon: FaXTwitter,
+		name: 'GitHub',
+		url: 'https://github.com/your-handle',
+		icon: FaGithub,
 	},
 ];
 
@@ -30,23 +26,17 @@ export function ProfileCard() {
 				<div className="relative h-full w-full overflow-hidden rounded-[18px]">
 					<Image
 						src="/assets/images/avatar.webp"
-						alt="Portrait of Developer"
+						alt="Portrait of Senior Frontend Engineer"
 						fill
 						priority
 						sizes="(max-width: 760px) 100vw, 36vw"
-						className="scale-100 object-cover grayscale transition-transform duration-300 aspect-[0.546728972]"
+						className="scale-100 object-cover grayscale transition-transform duration-300"
 					/>
 				</div>
 
 				<div className="flex min-[576px]:block! top-[50%] left-0 absolute items-center z-2 -translate-y-1/2">
 					<div>
-						<Image
-							src="/assets/images/vector_dark.svg"
-							alt=""
-							width={32}
-							height={227}
-							className="grayscale"
-						/>
+						<StatusLine height={260} width={32} className="grayscale" />
 					</div>
 
 					<p className="pointer-events-none absolute inset-0 z-3 inline-flex flex-col items-center justify-center gap-2 text-[rgba(255,255,255,0.72)]">
@@ -54,7 +44,7 @@ export function ProfileCard() {
 							className="text-sm font-medium tracking-normal"
 							style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
 						>
-							Available for work
+							Open to Opportunities
 						</span>
 						<span className="relative size-2 rounded-full bg-[#00de51] after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-[#00de51] after:animate-[rippleFade_1.8s_ease-out_infinite]" />
 					</p>
@@ -85,11 +75,11 @@ export function ProfileCard() {
 
 				<div className="absolute bottom-9.5 left-9.5 right-9.5">
 					<h4 className="text-[#FFFFFFB8] pb-4 tracking-[-0.02em] font-medium font-apfel text-[32px] leading-normal">
-						Hey I&apos;m a Developer
+						Senior Frontend Engineer
 					</h4>
 					<p className="text-[#FFFFFF8F] text-sm tracking-[0.005em]">
-						I help startups grow with smart design and no-code development, based in
-						Cupertino, CA.
+						I build high-performance web and mobile experiences, turning complex product
+						requirements into intuitive, reliable interfaces.
 					</p>
 					<Separator className="bg-[#FFFFFF14] my-8 h-px" />
 
@@ -102,10 +92,12 @@ export function ProfileCard() {
 						</span>
 						<a
 							className="ml-3.5 flex items-center gap-3 text-sm text-[#b8c5cf]"
-							href="#contact"
+							href="/resume.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
-							<Download size={17} />
-							Download CV
+							<FileText size={17} />
+							View Resume
 						</a>
 					</div>
 				</div>
