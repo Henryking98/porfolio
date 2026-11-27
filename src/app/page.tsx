@@ -4,6 +4,7 @@ import { ProfileCard } from '@/components/organisms/ProfileCard';
 import { SideRail } from '@/components/organisms/SideRail';
 import { WorkHighLights } from '@/components/sections/WorkHighLights';
 import { Services } from '@/components/sections/Services';
+import { TechStack } from '@/components/sections/TechStack';
 
 export default function Home() {
 	return (
@@ -25,6 +26,7 @@ export default function Home() {
 					<About />
                     <WorkHighLights />
                     <Services />
+                    <TechStack />
 				</div>
 			</div>
 		</main>
