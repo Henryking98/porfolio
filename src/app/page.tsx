@@ -5,6 +5,7 @@ import { SideRail } from '@/components/organisms/SideRail';
 import { WorkHighLights } from '@/components/sections/WorkHighLights';
 import { Services } from '@/components/sections/Services';
 import { TechStack } from '@/components/sections/TechStack';
+import { Testimonials } from '@/components/sections/Testimonial';
 
 export default function Home() {
 	return (
@@ -27,6 +28,7 @@ export default function Home() {
                     <WorkHighLights />
                     <Services />
                     <TechStack />
+                    <Testimonials />
 				</div>
 			</div>
 		</main>
