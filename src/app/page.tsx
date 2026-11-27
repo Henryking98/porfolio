@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero';
 import { ProfileCard } from '@/components/organisms/ProfileCard';
 import { SideRail } from '@/components/organisms/SideRail';
 import { WorkHighLights } from '@/components/sections/WorkHighLights';
+import { Services } from '@/components/sections/Services';
 
 export default function Home() {
 	return (
@@ -23,6 +24,7 @@ export default function Home() {
 					<Hero />
 					<About />
                     <WorkHighLights />
+                    <Services />
 				</div>
 			</div>
 		</main>
