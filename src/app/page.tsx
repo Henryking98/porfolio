@@ -2,6 +2,7 @@ import { About } from '@/components/sections/About';
 import { Hero } from '@/components/sections/Hero';
 import { ProfileCard } from '@/components/organisms/ProfileCard';
 import { SideRail } from '@/components/organisms/SideRail';
+import { WorkHighLights } from '@/components/sections/WorkHighLights';
 
 export default function Home() {
 	return (
@@ -21,6 +22,7 @@ export default function Home() {
 				<div className="mx-auto w-full max-w-177">
 					<Hero />
 					<About />
+                    <WorkHighLights />
 				</div>
 			</div>
 		</main>

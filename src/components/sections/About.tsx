@@ -10,7 +10,6 @@ export function About() {
 				<SectionBadge
 					label="About"
 					icon={UserCircle}
-					className="mb-8"
 					iconClassName="text-[#00de51]"
 				/>
 
